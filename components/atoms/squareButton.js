@@ -9,6 +9,11 @@ export class SquareButton extends Component{
     }
 
     onPress(){
+        global.position++;
+        console.log(global.position);
+        if(global.position === 9){
+            this.props.navigation.navigate('Result');
+        }
         this.props.navigation.navigate('Sound');
     }
 

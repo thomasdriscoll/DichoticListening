@@ -8,6 +8,8 @@ import {Result} from './components/molecules/Result';
 
 const Stack = createStackNavigator();
 
+global.position = 0;
+
 export default function App() {
   return (
     <NavigationContainer>
