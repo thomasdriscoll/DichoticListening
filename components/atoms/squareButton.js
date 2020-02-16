@@ -1,16 +1,24 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {StyleSheet, Button, View, SafeAreaView, Text, Alert} from 'react-native';
 
 
-// export default function SquareButton(){
-//     return(
-//         // <SafeAreaView style={styles.container}>
-//            <Button
-//              />
-//         {/* </SafeAreaView> */}
-//     )
-// }
+export class SquareButton extends Component{
+    constructor(props) {
+        super(props);
+        this.onPress = this.onPress.bind(this);
+    }
 
-// const styles = StyleSheet.create({
+    onPress(){
+        this.props.navigation.navigate('Sound');
+    }
 
-// });
+    render(){
+        return(
+            <Button
+                title = {this.props.title}
+                onPress = {this.onPress}
+            />
+            
+        );
+    }    
+}
