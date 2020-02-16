@@ -1,3 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {StyleSheet, Button, View, SafeAreaView, Text, Alert} from 'react-native';
-import Constant from 'expo-constant';
+
+export class PlayButton extends Component{
+    
+}
