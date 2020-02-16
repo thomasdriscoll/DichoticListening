@@ -1,19 +1,33 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react';
+import 'react-native-gesture-handler';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import {Sound} from './components/molecules/Sound';
+// import {Choice} from './components/molecules/Choice';
+// import {Result} from './components/molecules/Result';
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Sound">
+        <Stack.Screen 
+          name = "Sound"
+          component = {Sound}
+          options = {{}}
+        />
+        {/* <Stack.Screen
+          name = "Choice"
+          component = {Choice}
+          options = {{}}
+        />
+        <Stack.Screen 
+          name= "Result"
+          component = {Result}
+          options = {{}}
+        /> */}
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
