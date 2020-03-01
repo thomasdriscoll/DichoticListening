@@ -12,6 +12,7 @@ export class SquareButton extends Component{
         global.position++;
         console.log(global.position);
         if(global.position === 9){
+            global.position = 0;
             this.props.navigation.navigate('Result');
         }
         this.props.navigation.navigate('Sound');

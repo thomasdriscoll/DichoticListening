@@ -1,5 +1,6 @@
 import React from 'react';
 import {StyleSheet, Button, View, SafeAreaView, Text, Alert} from 'react-native';
+import { Audio } from 'expo-av';
 
 export function Sound({ navigation }){
     return(
@@ -8,7 +9,7 @@ export function Sound({ navigation }){
             <Button 
                 title="Play"
                 onPress= {() => {
-                    Alert.alert('Simple button pressed');
+                    playSound();
                 }}
                 // Insert "play" image here
             /> 
@@ -22,4 +23,15 @@ export function Sound({ navigation }){
             />           
         </View>
     );
+}
+
+async function playSound(){
+    const soundObject = new Audio.Sound();
+    try{
+        await soundObject.loadAsync(require('../../assets/sounds/DL_'+(global.position+1).toString()+'.mp4'));
+        await soundObject.playAsync();
+    }
+    catch(err){
+        console.log('Never works on the first try :/');
+    }
 }
