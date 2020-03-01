@@ -11,11 +11,20 @@ export class SquareButton extends Component{
     onPress(){
         global.position++;
         console.log(global.position);
+        console.log(this.props.choice);
+        if(this.props.choice == "left"){
+            global.left++;
+        }
+        else{
+            global.right++;
+        }
         if(global.position === 9){
             global.position = 0;
             this.props.navigation.navigate('Result');
         }
-        this.props.navigation.navigate('Sound');
+        else{
+            this.props.navigation.navigate('Sound');
+        }
     }
 
     render(){
