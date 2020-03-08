@@ -3,10 +3,14 @@ import 'react-native-gesture-handler';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {Sound} from './components/molecules/Sound';
-// import {Choice} from './components/molecules/Choice';
-// import {Result} from './components/molecules/Result';
+import {Choice} from './components/molecules/Choice';
+import {Result} from './components/molecules/Result';
 
 const Stack = createStackNavigator();
+
+global.position = 0;
+global.right = 0;
+global.left = 0;
 
 export default function App() {
   return (
@@ -17,7 +21,7 @@ export default function App() {
           component = {Sound}
           options = {{}}
         />
-        {/* <Stack.Screen
+        <Stack.Screen
           name = "Choice"
           component = {Choice}
           options = {{}}
@@ -26,7 +30,7 @@ export default function App() {
           name= "Result"
           component = {Result}
           options = {{}}
-        /> */}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
